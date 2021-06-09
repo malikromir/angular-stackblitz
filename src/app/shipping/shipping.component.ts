@@ -7,8 +7,10 @@ import { CartService } from '../cart.service';
   styleUrls: ['./shipping.component.css']
 })
 export class ShippingComponent implements OnInit {
-  this.cartService.getShippingPrices().
+  shippingCosts: any;
   constructor(private cartService: CartService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.shippingCosts = this.cartService.getShippingPrices();
+  }
 }
